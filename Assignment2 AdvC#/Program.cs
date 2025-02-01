@@ -63,7 +63,7 @@ namespace Assignment2_AdvC_
             //int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
 
             //Console.WriteLine("Number of queries is: ");
-            
+
             //int Q = int.Parse(Console.ReadLine());
 
             //int[] Queries = new int[Q];
@@ -86,6 +86,30 @@ namespace Assignment2_AdvC_
             //}
 
             #endregion
+
+            #region Q6 : Given a number N and an array of N numbers. Determine if it's palindrome or not.
+
+            //int[] array = { 1, 2, 3, 2, 1 };
+            //int[] array2 = { 1, 2, 3, 4, 5 };
+            //int[] array3 = { 5 };
+
+            //Console.WriteLine(IsPalindrome(array));     //true
+            //Console.WriteLine(IsPalindrome(array2));    //false
+            //Console.WriteLine(IsPalindrome(array3));    //true
+
+            #endregion
+
+            #region Q7 : Given an array, implement a function to remove duplicate elements from an array.
+
+            //int[] array = { 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6 };
+
+            //foreach (int num in RemoveDuplicates(array))
+            //{
+            //    Console.WriteLine(num);
+            //}
+
+            #endregion
+
         }
 
         #region Q1 : You are given an ArrayList containing a sequence of elements. try to reverse the order of elements in the ArrayList in-place(in the same arrayList) without using the built-in Reverse. Implement a function that takes the ArrayList as input and modifies it to have the reversed order of elements.
@@ -157,5 +181,40 @@ namespace Assignment2_AdvC_
 
         #endregion
 
+        #region Q6 : Given a number N and an array of N numbers. Determine if it's palindrome or not.
+
+        public static bool IsPalindrome(int[] arr)
+        {
+            for (int i = 0; i < arr.Length / 2; i++)
+            {
+                if (arr[i] != arr[arr.Length - i - 1])
+                    return false;
+            }
+            return true;
+        }
+
+        #endregion
+
+        #region Q7 : Given an array, implement a function to remove duplicate elements from an array.
+
+        public static int[] RemoveDuplicates(int[] array)
+        {
+            int[] NewArr = (int[]) array.Clone();
+            Array.Sort(NewArr);
+
+            List<int> uniqueValues = new List<int>() { NewArr[0] };
+
+            for (int i = 1; i < NewArr.Length; i++)
+            {
+                if (NewArr[i] != NewArr[i - 1])
+                {
+                    uniqueValues.Add(NewArr[i]);
+                }
+            }
+
+            return uniqueValues.ToArray();
+        }
+
+        #endregion
     }
 }
