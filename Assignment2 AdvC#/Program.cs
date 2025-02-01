@@ -110,6 +110,18 @@ namespace Assignment2_AdvC_
 
             #endregion
 
+            #region Q8:  Given an array list , implement a function to remove all odd numbers from it.
+
+            //ArrayList nums = new ArrayList() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            //ArrayList evenNumbers = RemoveOddNumbers(nums);
+
+            //foreach (int n in evenNumbers)
+            //{
+            //    Console.WriteLine(n);
+            //}
+
+            #endregion
         }
 
         #region Q1 : You are given an ArrayList containing a sequence of elements. try to reverse the order of elements in the ArrayList in-place(in the same arrayList) without using the built-in Reverse. Implement a function that takes the ArrayList as input and modifies it to have the reversed order of elements.
@@ -213,6 +225,23 @@ namespace Assignment2_AdvC_
             }
 
             return uniqueValues.ToArray();
+        }
+
+        #endregion
+
+        #region Q8 :  Given an array list , implement a function to remove all odd numbers from it.
+
+        public static ArrayList RemoveOddNumbers(ArrayList list)
+        {
+            ArrayList evenNumbers = new ArrayList();
+            foreach (int n in list)
+            {
+                if (n % 2 == 0)
+                {
+                    evenNumbers.Add(n);
+                }
+            }
+            return evenNumbers;
         }
 
         #endregion
