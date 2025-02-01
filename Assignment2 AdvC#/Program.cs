@@ -8,18 +8,31 @@ namespace Assignment2_AdvC_
         {
             #region Q1 : You are given an ArrayList containing a sequence of elements. try to reverse the order of elements in the ArrayList in-place(in the same arrayList) without using the built-in Reverse. Implement a function that takes the ArrayList as input and modifies it to have the reversed order of elements.
 
-            ArrayList nums = new ArrayList() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //ArrayList nums = new ArrayList() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-            ArrayList reversed = Reverse(nums);
+            //ArrayList reversed = Reverse(nums);
 
-            foreach (int n in reversed)
-            {
-                Console.WriteLine(n);
-            }
+            //foreach (int n in reversed)
+            //{
+            //    Console.WriteLine(n);
+            //}
 
             #endregion
-        
-        
+
+            #region Q2 : You are given a list of integers. Your task is to find and return a new list containing only the even numbers from the given list.
+
+            //List<int> nums = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            //List<int> evenNumbers = GetEvenNumbers(nums);
+
+            //foreach (int n in evenNumbers)
+            //{
+            //    Console.WriteLine(n);
+            //}
+
+            #endregion
+
+
         }
 
         #region Q1 : You are given an ArrayList containing a sequence of elements. try to reverse the order of elements in the ArrayList in-place(in the same arrayList) without using the built-in Reverse. Implement a function that takes the ArrayList as input and modifies it to have the reversed order of elements.
@@ -31,8 +44,24 @@ namespace Assignment2_AdvC_
                 reversedList.Add(list[i]);
             }
             return reversedList;
-        } 
+        }
         #endregion
 
+        #region Q2 : You are given a list of integers. Your task is to find and return a new list containing only the even numbers from the given list.
+
+        public static List<int> GetEvenNumbers(List<int> numbers)
+        {
+            List<int> evenNumbers = new List<int>();
+            foreach (int n in numbers)
+            {
+                if (n % 2 == 0)
+                {
+                    evenNumbers.Add(n);
+                }
+            }
+            return evenNumbers;
+        }
+
+        #endregion
     }
 }
