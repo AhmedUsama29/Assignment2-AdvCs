@@ -50,15 +50,42 @@ namespace Assignment2_AdvC_
 
             #region Q4 : Given a string, find the first non-repeated character in it and return its index. If there is no such character, return -1
 
-            string word = "testing this new feature";
+            //string word = "testing this new feature";
 
-            int index = GetFirstNotRepeatedCharIndex(word);
+            //int index = GetFirstNotRepeatedCharIndex(word);
 
-            Console.WriteLine(index);
+            //Console.WriteLine(index);
 
             #endregion
 
+            #region Q5 : Given an array  consists of  numbers with size N and number of queries, in each query you will be given an integer X, and you should print how many numbers in array that is greater than  X.
 
+            //int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
+
+            //Console.WriteLine("Number of queries is: ");
+            
+            //int Q = int.Parse(Console.ReadLine());
+
+            //int[] Queries = new int[Q];
+
+            //for (int i = 0; i < Q ; i++)
+            //{
+            //    Console.WriteLine("Enter the query number " + (i + 1));
+            //    Queries[i] = int.Parse(Console.ReadLine());
+            //}
+
+
+            //foreach (int x in Queries)
+            //{
+            //    int count = 0;
+            //    foreach (int num in arr)
+            //    {
+            //        if (num > x) count++;
+            //    }
+            //    Console.WriteLine(count);
+            //}
+
+            #endregion
         }
 
         #region Q1 : You are given an ArrayList containing a sequence of elements. try to reverse the order of elements in the ArrayList in-place(in the same arrayList) without using the built-in Reverse. Implement a function that takes the ArrayList as input and modifies it to have the reversed order of elements.
@@ -111,6 +138,23 @@ namespace Assignment2_AdvC_
             return -1; //no char is repeated
 
         }
+        #endregion
+
+        #region Q5 : Given an array  consists of  numbers with size N and number of queries, in each query you will be given an integer X, and you should print how many numbers in array that is greater than  X.
+
+        public int CountNumbersGreaterThanX(int[] array, int X)
+        {
+            int count = 0;
+            foreach (int num in array)
+            {
+                if (num > X)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
         #endregion
 
     }
