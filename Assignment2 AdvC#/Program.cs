@@ -47,9 +47,17 @@ namespace Assignment2_AdvC_
             ////Console.WriteLine(list.Get(3)); // throws an exception
 
             #endregion
-        
 
-        
+            #region Q4 : Given a string, find the first non-repeated character in it and return its index. If there is no such character, return -1
+
+            string word = "testing this new feature";
+
+            int index = GetFirstNotRepeatedCharIndex(word);
+
+            Console.WriteLine(index);
+
+            #endregion
+
 
         }
 
@@ -81,8 +89,29 @@ namespace Assignment2_AdvC_
         }
 
         #endregion
-    
-    
-    
+
+        #region Q4 : Given a string, find the first non-repeated character in it and return its index. If there is no such character, return -1
+
+        //i don't know the dictionary yet
+        public static int GetFirstNotRepeatedCharIndex(string word) {
+
+            int[] charCount = new int[999];
+
+            foreach (char c in word)
+            {
+                charCount[c]++;
+            }
+
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (charCount[word[i]] == 1)
+                    return i;
+            }
+
+            return -1; //no char is repeated
+
+        }
+        #endregion
+
     }
 }
