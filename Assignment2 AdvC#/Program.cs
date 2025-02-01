@@ -50,15 +50,78 @@ namespace Assignment2_AdvC_
 
             #region Q4 : Given a string, find the first non-repeated character in it and return its index. If there is no such character, return -1
 
-            string word = "testing this new feature";
+            //string word = "testing this new feature";
 
-            int index = GetFirstNotRepeatedCharIndex(word);
+            //int index = GetFirstNotRepeatedCharIndex(word);
 
-            Console.WriteLine(index);
+            //Console.WriteLine(index);
 
             #endregion
 
+            #region Q5 : Given an array  consists of  numbers with size N and number of queries, in each query you will be given an integer X, and you should print how many numbers in array that is greater than  X.
 
+            //int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
+
+            //Console.WriteLine("Number of queries is: ");
+
+            //int Q = int.Parse(Console.ReadLine());
+
+            //int[] Queries = new int[Q];
+
+            //for (int i = 0; i < Q ; i++)
+            //{
+            //    Console.WriteLine("Enter the query number " + (i + 1));
+            //    Queries[i] = int.Parse(Console.ReadLine());
+            //}
+
+
+            //foreach (int x in Queries)
+            //{
+            //    int count = 0;
+            //    foreach (int num in arr)
+            //    {
+            //        if (num > x) count++;
+            //    }
+            //    Console.WriteLine(count);
+            //}
+
+            #endregion
+
+            #region Q6 : Given a number N and an array of N numbers. Determine if it's palindrome or not.
+
+            //int[] array = { 1, 2, 3, 2, 1 };
+            //int[] array2 = { 1, 2, 3, 4, 5 };
+            //int[] array3 = { 5 };
+
+            //Console.WriteLine(IsPalindrome(array));     //true
+            //Console.WriteLine(IsPalindrome(array2));    //false
+            //Console.WriteLine(IsPalindrome(array3));    //true
+
+            #endregion
+
+            #region Q7 : Given an array, implement a function to remove duplicate elements from an array.
+
+            //int[] array = { 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6 };
+
+            //foreach (int num in RemoveDuplicates(array))
+            //{
+            //    Console.WriteLine(num);
+            //}
+
+            #endregion
+
+            #region Q8:  Given an array list , implement a function to remove all odd numbers from it.
+
+            //ArrayList nums = new ArrayList() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            //ArrayList evenNumbers = RemoveOddNumbers(nums);
+
+            //foreach (int n in evenNumbers)
+            //{
+            //    Console.WriteLine(n);
+            //}
+
+            #endregion
         }
 
         #region Q1 : You are given an ArrayList containing a sequence of elements. try to reverse the order of elements in the ArrayList in-place(in the same arrayList) without using the built-in Reverse. Implement a function that takes the ArrayList as input and modifies it to have the reversed order of elements.
@@ -113,5 +176,74 @@ namespace Assignment2_AdvC_
         }
         #endregion
 
+        #region Q5 : Given an array  consists of  numbers with size N and number of queries, in each query you will be given an integer X, and you should print how many numbers in array that is greater than  X.
+
+        public int CountNumbersGreaterThanX(int[] array, int X)
+        {
+            int count = 0;
+            foreach (int num in array)
+            {
+                if (num > X)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        #endregion
+
+        #region Q6 : Given a number N and an array of N numbers. Determine if it's palindrome or not.
+
+        public static bool IsPalindrome(int[] arr)
+        {
+            for (int i = 0; i < arr.Length / 2; i++)
+            {
+                if (arr[i] != arr[arr.Length - i - 1])
+                    return false;
+            }
+            return true;
+        }
+
+        #endregion
+
+        #region Q7 : Given an array, implement a function to remove duplicate elements from an array.
+
+        public static int[] RemoveDuplicates(int[] array)
+        {
+            int[] NewArr = (int[]) array.Clone();
+            Array.Sort(NewArr);
+
+            List<int> uniqueValues = new List<int>() { NewArr[0] };
+
+            for (int i = 1; i < NewArr.Length; i++)
+            {
+                if (NewArr[i] != NewArr[i - 1])
+                {
+                    uniqueValues.Add(NewArr[i]);
+                }
+            }
+
+            return uniqueValues.ToArray();
+        }
+
+        #endregion
+
+        #region Q8 :  Given an array list , implement a function to remove all odd numbers from it.
+
+        public static ArrayList RemoveOddNumbers(ArrayList list)
+        {
+            ArrayList evenNumbers = new ArrayList();
+            foreach (int n in list)
+            {
+                if (n % 2 == 0)
+                {
+                    evenNumbers.Add(n);
+                }
+            }
+            return evenNumbers;
+        }
+
+        #endregion
     }
 }
